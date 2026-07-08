@@ -2,15 +2,12 @@ function SkillList(){
     const skill = ['HTML', 'PHP', 'CSS'];
     return(
         <div>
-            <h2>My Skills (I know 5 Skills)</h2>
+            <h2>My Skills ({skill.length})</h2>
 
             <ul>
-                <li>{skill[0]}</li>
-                <li>{skill[1]}</li>
-                <li>{skill[2]}</li>
-
-
-
+                {skill.map((item, index) => 
+                    <li key={index}>{item}</li>
+                )}
             </ul>
         </div>
     )
