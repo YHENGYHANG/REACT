@@ -1,3 +1,6 @@
+//Realm Kindred Notarte BSIT - 3 SEC: 1
+//DC4 - 05:00 - 06:00pm (Monday & Wednesday & Friday)
+
 
 import Header from './Header.jsx'
 import StudentCard from './StudentCard.jsx'
