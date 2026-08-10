@@ -6,19 +6,39 @@ import {  Routes, Route } from 'react-router-dom'
 // import Header from './Header.jsx'
 // import StudentCard from './StudentCard.jsx'
 // import AttendanceCounter from './AttendanceCounter.jsx'
+
 function Home() {return <h1>Home Page</h1>; }
 function About() {return <h1>About Page</h1>; }
 function Contact() {return <h1>Contact Page</h1>; }
 
+// import Home from './Home.jsx'
+// import About from './About.jsx'
+// import Contact from './Contact.jsx'
+
+import NavBar from './NavBar.jsx'
+
 
 function App(){
   return(
- 
+
+    <>
+
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> 
       </Routes>
+
+    </>
+
+// {/* <div>
+//     <Home />
+//     <About />
+//     <Contact />
+// </div> */}
+
+
       // {/* <Header title="HUbaga  "/>
       // <StudentCard name="John" age={20} course="BSIT" status={true}/>
       // <StudentCard name="Monica Ella" age={16} course="BSHM" status={false}/>      
