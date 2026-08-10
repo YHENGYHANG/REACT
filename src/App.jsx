@@ -1,22 +1,30 @@
 //Realm Kindred Notarte BSIT - 3 SEC: 1
 //DC4 - 05:00 - 06:00pm (Monday & Wednesday & Friday)
 
+import {  Routes, Route } from 'react-router-dom'
 
-import Header from './Header.jsx'
-import StudentCard from './StudentCard.jsx'
-import AttendanceCounter from './AttendanceCounter.jsx'
+// import Header from './Header.jsx'
+// import StudentCard from './StudentCard.jsx'
+// import AttendanceCounter from './AttendanceCounter.jsx'
+function Home() {return <h1>Home Page</h1>; }
+function About() {return <h1>About Page</h1>; }
+function Contact() {return <h1>Contact Page</h1>; }
+
 
 function App(){
   return(
-    <div>
+ 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} /> 
+      </Routes>
+      // {/* <Header title="HUbaga  "/>
+      // <StudentCard name="John" age={20} course="BSIT" status={true}/>
+      // <StudentCard name="Monica Ella" age={16} course="BSHM" status={false}/>      
+      // <StudentCard name="Sarah Lyn" age={21} course="BSHM" status={true}/>      
+      // <AttendanceCounter /> */}
 
-      <Header title="HUbaga  "/>
-      <StudentCard name="John" age={20} course="BSIT" status={true}/>
-      <StudentCard name="Monica Ella" age={16} course="BSHM" status={false}/>      
-      <StudentCard name="Sarah Lyn" age={21} course="BSHM" status={true}/>      
-      <AttendanceCounter />
-
-    </div>
   )
 }
 export default App
