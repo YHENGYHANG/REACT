@@ -11,7 +11,57 @@ import { useState } from 'react'
 
 function Home() {return <h1>Home Page</h1>; }
 function About() {return <h1>About Page</h1>; }
-function Contact() {return <h1>Contact Page</h1>; }
+
+function Contact() {
+  const [form, setForm] = useState({ name: '', email: '' });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault(); // stop page reload
+
+    if (!form.name.trim() || !form.email.trim()) {
+      setError('Name and Email are both required.');
+      return;
+    }
+
+    setError('');
+    navigate('/thank-you');
+  }
+
+  return (
+    <div>
+      <h1>Contact Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Email"
+        />
+        <button type="submit">Submit</button>
+      </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+  );
+}
+
+function ThankYou() {
+  return <h1>Thank you! Your message was received.</h1>;
+}
 
 
 function NameInput(){
@@ -35,42 +85,6 @@ function NameInput(){
 // import Contact from './Contact.jsx'
 
 
-function LoginButton(){
-  const [form, setForm] = useState({email: '', password: ''});
-
-  function handleChange(e){
-    const {name, value} = e.target;
-    setForm(Form => ({...Form, [name]: value}));
-  }
-
-    function handleSubmit(e){
-      e.preventDefault();
-      console.log('Email:', form.email);
-      console.log('Password:', form.password);
-    }
-
-  return(
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="email" 
-        name="email"
-        value={form.email} 
-        onChange={handleChange}
-        placeholder="Email"
-      />
-      <input 
-        type="password" 
-        name="password"
-        value={form.password} 
-        onChange={handleChange}
-        placeholder="Password"
-      />
-      <button type="submit">Login</button>
-    </form>
-    
-  );
-
-}
 
 import NavBar from './NavBar.jsx'
 
@@ -85,8 +99,8 @@ function App(){
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> 
-        <Route path="/login" element={<LoginButton />} />
         <Route path="/input" element={<NameInput />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
      
