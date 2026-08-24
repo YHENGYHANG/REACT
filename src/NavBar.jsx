@@ -4,10 +4,14 @@ function NavBar() {
     return(
         <nav>
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <br></br>
+            <Link to="/event">Event</Link>
+            <br></br>
+            {/* <Link to="/contact">Contact</Link>
+            <br></br>
             <Link to="/input">Input</Link>
-            <Link to="/thank-you">Thank You</Link>
+            <br></br>
+            <Link to="/thank-you">Thank You</Link> */}
         </nav>
     );
 }
