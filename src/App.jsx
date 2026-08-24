@@ -2,16 +2,21 @@
 //DC4 - 05:00 - 06:00pm (Monday & Wednesday & Friday)
 
 import {  Routes, Route } from 'react-router-dom'
-import {useNavigate} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
 import { useState } from 'react'
 
 // import Header from './Header.jsx'
 // import StudentCard from './StudentCard.jsx'
 // import AttendanceCounter from './AttendanceCounter.jsx'
 
-function Home() {return <h1>Home Page</h1>; }
-function About() {return <h1>About Page</h1>; }
-function Contact() {return <h1>Contact Page</h1>; }
+import Home from './Home.jsx';
+import Event from './Event.jsx';
+import Intrams from './Intrams.jsx';
+import Foundation from './Foundation.jsx';
+import Buwan from './Buwan.jsx';
+// function Home() {return <h1>Welcome my Precious! <br></br> <p>this is a paragraph</p></h1>; }
+// function About() {return <h1>About Page</h1>; }
+// function Contact() {return <h1>Contact Page</h1>; }
 
 
 function NameInput(){
@@ -35,42 +40,7 @@ function NameInput(){
 // import Contact from './Contact.jsx'
 
 
-function LoginButton(){
-  const [form, setForm] = useState({email: '', password: ''});
 
-  function handleChange(e){
-    const {name, value} = e.target;
-    setForm(Form => ({...Form, [name]: value}));
-  }
-
-    function handleSubmit(e){
-      e.preventDefault();
-      console.log('Email:', form.email);
-      console.log('Password:', form.password);
-    }
-
-  return(
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="email" 
-        name="email"
-        value={form.email} 
-        onChange={handleChange}
-        placeholder="Email"
-      />
-      <input 
-        type="password" 
-        name="password"
-        value={form.password} 
-        onChange={handleChange}
-        placeholder="Password"
-      />
-      <button type="submit">Login</button>
-    </form>
-    
-  );
-
-}
 
 import NavBar from './NavBar.jsx'
 
@@ -83,9 +53,11 @@ function App(){
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> 
-        <Route path="/login" element={<LoginButton />} />
+        <Route path="/events" element={<Event />} />
+        <Route path="/intrams" element={<Intrams />} /> 
+        <Route path="/foundation" element={<Foundation />} />
+        <Route path="/buwan" element={<Buwan />} />
+
         <Route path="/input" element={<NameInput />} />
       </Routes>
 

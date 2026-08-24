@@ -15,13 +15,17 @@ import { BrowserRouter } from 'react-router-dom'
 
 // import Header from './Header.jsx'
 // import StudentCard from './StudentCard.jsx'
+
 import App from './App.jsx'
+
+// import DraftEditor from './DraftEditor.jsx'
 
 createRoot (document.getElementById('root')).render(
   <StrictMode>
 
   <BrowserRouter>
       <App />
+      {/* <DraftEditor /> */}
   </BrowserRouter>
 
     {/* <HeaderBanner />
