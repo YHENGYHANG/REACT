@@ -80,6 +80,7 @@ function IntramsRegistration(){
         value="Male"
         checked={radioB==='Male'}
         onChange={handleRadio}
+        required
         />
         Male
     </label>
@@ -90,13 +91,14 @@ function IntramsRegistration(){
         value="Female"
         checked={radioB==='Female'}
         onChange={handleRadio}
+        required
         />
         Female
     </label>
 
 
-      <select id="course" value={dropL} onChange={handleDrop}>
-        <option value="default">--Course--</option>
+      <select id="course" value={dropL} onChange={handleDrop} required>
+        <option value="">--Course--</option>
         <option value="BSIT">BSIT</option>
         <option value="BSCS">BSCS</option>
       </select>

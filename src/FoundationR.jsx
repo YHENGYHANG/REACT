@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 function FoundationR(){
-    const [form, setForm] = useState({ name: '', sport: '' });
+    const [form, setForm] = useState({ name: '', booth: '' });
     const [radioB, setRB] = useState('');
     const [dropL, setDrop] = useState('');
     // const [error, setError] = useState('');
@@ -27,7 +27,7 @@ function FoundationR(){
     e.preventDefault(); // stop page reload
     console.log('FOUNDATION DAY REGISTRATION:')
     console.log('Name: ', form.name)
-    console.log('Sport: ', form.sport)
+    console.log('Booth: ', form.booth)
     console.log(`Sex: ${radioB}`)
     console.log(`Course: ${dropL}`)
 
@@ -42,7 +42,7 @@ function FoundationR(){
 
   return (
     <div>
-      <h2>Intramurals Registration</h2>
+      <h2>Foundation Day Registration</h2>
       <form onSubmit={handleSubmit}>
         <label>Name: </label>
         <input
@@ -56,7 +56,7 @@ function FoundationR(){
         <label>Booth: </label>
         <input
           type="text"
-          name="Booth"
+          name="booth"
           value={form.booth}
           onChange={handleChange}
           placeholder="Booth"
@@ -78,6 +78,7 @@ function FoundationR(){
         value="Male" 
         checked={radioB==='Male'}
         onChange={handleRadio}
+        required
         />
         Male
     </label>
@@ -88,13 +89,14 @@ function FoundationR(){
         value="Female"
         checked={radioB==='Female'}
         onChange={handleRadio}
+        required
         />
         Female
     </label>
         <br></br>
 
-    <select id="course" value={dropL} onChange={handleDrop}>
-        <option value="default">--Course--</option>
+    <select id="course" value={dropL} onChange={handleDrop} required>
+        <option value="">--Course--</option>
         <option value="BSIT">BSIT</option>
         <option value="BSCS">BSCS</option>
     </select>

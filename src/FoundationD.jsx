@@ -10,7 +10,7 @@ function FoundationD(){
         
         <br></br>
         <h2>Registration:</h2>
-        <Link to="/foundationR">Foundation Day Registration</Link>
+        <Link to="/foundationR">Foundation Day   Registration</Link>
         <br></br>
     </div>        
     )
