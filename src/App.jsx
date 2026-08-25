@@ -23,7 +23,7 @@ import FoundationR from './FoundationR.jsx';
 import BuwanD from './BuwanD.jsx';
 import BuwanR from './BuwanR.jsx';
 
-
+import Confirmation from './Confirmation.jsx';
 // function ThankYou() {
 //   return <h1>Thank you! Your message was received.</h1>;
 // }
@@ -69,7 +69,8 @@ function App(){
         <Route path="/foundationR" element={<FoundationR />} />
         <Route path="/buwanD" element={<BuwanD />} />
         <Route path="/buwanR" element={<BuwanR />} />
-
+        <Route path="/confirmation" element={<Confirmation />} />
+       
       </Routes>
 
      

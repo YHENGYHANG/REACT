@@ -1,11 +1,17 @@
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function IntramsRegistration(){
     const [form, setForm] = useState({ name: '', sport: '' });
     const [radioB, setRB] = useState('');
     const [dropL, setDrop] = useState('');
-    // const [error, setError] = useState('');
+    const [error, setError] = useState('');
 
+    const navig = useNavigate();
+    const gooo = () => {
+      navig("confirmation");
+    }
+    
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -31,13 +37,13 @@ function IntramsRegistration(){
 
 
 
-    // if (!form.name.trim() || !form.sport.trim()) {
-    //   setError('Name and Email are both required.');
-    //   return;
-    // }
+    if (!form.name.trim() || !form.sport.trim()) {
+      setError('Name and Sport are both required.');
+      return;
+    }
 
-//     setError('');
-//     navigate('/thank-you');
+    setError('');
+    navig('/confirmation');
   }
 
   return (
@@ -105,9 +111,9 @@ function IntramsRegistration(){
 
 
         <br></br>
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit={gooo}>Submit</button>
       </form>
-
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }export default IntramsRegistration

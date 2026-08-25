@@ -1,11 +1,16 @@
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function FoundationR(){
-    const [form, setForm] = useState({ name: '', booth: '' });
+    const [form, setForm] = useState({ name: '', booth: '', email: '' });
     const [radioB, setRB] = useState('');
     const [dropL, setDrop] = useState('');
-    // const [error, setError] = useState('');
+    const [error, setError] = useState('');
 
+    const navig = useNavigate();
+    const gooo = () => {
+      navig("confirmation");
+    }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -13,12 +18,12 @@ function FoundationR(){
 
   }
 
-  function handleRadio(){
-    setRB(event.target.value);
+  function handleRadio(e){
+    setRB(e.target.value);
   }
 
-  function handleDrop(){
-    setDrop(event.target.value);
+  function handleDrop(e){
+    setDrop(e.target.value);
   }
 
   function handleSubmit(e) {
@@ -31,13 +36,13 @@ function FoundationR(){
     console.log(`Sex: ${radioB}`)
     console.log(`Course: ${dropL}`)
 
-    // if (!form.name.trim() || !form.sport.trim()) {
-    //   setError('Name and Email are both required.');
-    //   return;
-    // }
+    if (!form.name.trim() || !form.booth.trim()) {
+      setError('Name and Booth are both required.');
+      return;
+    }
 
-//     setError('');
-//     navigate('/thank-you');
+    setError('');
+    navig('/confirmation');
   }
 
   return (
@@ -103,7 +108,7 @@ function FoundationR(){
 
         <button type="submit">Submit</button>
       </form>
-      {/* {error && <p style={{ color: 'red' }}>{error}</p>} */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }export default FoundationR

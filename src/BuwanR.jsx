@@ -1,10 +1,17 @@
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function BuwanR(){
-    const [form, setForm] = useState({ name: '', Events: '' });
+    const [form, setForm] = useState({ name: '', Events: '', email: '' });
     const [radioB, setRB] = useState('');
     const [dropL, setDrop] = useState('');
-    // const [error, setError] = useState('');
+    const [error, setError] = useState('');
+
+    const navig = useNavigate();
+    const gooo = () => {
+        navig("confirmation")
+    }
+
 
 
   function handleChange(e) {
@@ -13,12 +20,12 @@ function BuwanR(){
 
   }
 
-  function handleRadio(){
-    setRB(event.target.value);
+  function handleRadio(e){
+    setRB(e.target.value);
   }
 
-  function handleDrop(){
-    setDrop(event.target.value);
+  function handleDrop(e){
+    setDrop(e.target.value);
   }
 
   function handleSubmit(e) {
@@ -31,18 +38,18 @@ function BuwanR(){
     console.log(`Sex: ${radioB}`)
     console.log(`Course: ${dropL}`)
 
-    // if (!form.name.trim() || !form.sport.trim()) {
-    //   setError('Name and Email are both required.');
-    //   return;
-    // }
+    if (!form.name.trim() || !form.Events.trim()) {
+      setError('Name and Email are both required.');
+      return;
+    }
 
-//     setError('');
-//     navigate('/thank-you');
+    setError('');
+    navig('/confirmation');
   }
 
   return (
     <div>
-      <h2>Foundation Day Registration</h2>
+      <h2>Buwan ng Wika Registration</h2>
       <form onSubmit={handleSubmit}>
         <label>Name: </label>
         <input
@@ -103,7 +110,7 @@ function BuwanR(){
 
         <button type="submit">Submit</button>
       </form>
-      {/* {error && <p style={{ color: 'red' }}>{error}</p>} */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }export default BuwanR
