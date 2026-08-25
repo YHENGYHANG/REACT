@@ -20,6 +20,9 @@ import IntramsRegistration from './IntramsRegistration.jsx';
 import FoundationD from './FoundationD.jsx';
 import FoundationR from './FoundationR.jsx';
 
+import BuwanD from './BuwanD.jsx';
+import BuwanR from './BuwanR.jsx';
+
 
 // function ThankYou() {
 //   return <h1>Thank you! Your message was received.</h1>;
@@ -64,6 +67,9 @@ function App(){
         <Route path="/intramsR" element={<IntramsRegistration />} /> 
         <Route path="/foundationD" element={<FoundationD />} />
         <Route path="/foundationR" element={<FoundationR />} />
+        <Route path="/buwanD" element={<BuwanD />} />
+        <Route path="/buwanR" element={<BuwanR />} />
+
       </Routes>
 
      

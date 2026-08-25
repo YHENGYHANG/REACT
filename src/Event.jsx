@@ -19,7 +19,7 @@ function Event(){
             <br></br>
             <Link to="/foundationD">Foundataion Day Details</Link>
             <br></br>
-            <Link to="/buwan">Buwan ng Wika Registration</Link>         
+            <Link to="/buwanD">Buwan ng Wika Registration</Link>         
         </div>
     )
 }export default Event
