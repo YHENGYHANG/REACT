@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 
 import { BrowserRouter } from 'react-router-dom'
 
-// import App from './App.jsx'
+import App from './App.jsx'
 // import Greetings from './Greetings'
 // import HeaderBanner from './HeaderBanner'
 // import CourseCard from './CourseCard'
@@ -15,25 +15,13 @@ import { BrowserRouter } from 'react-router-dom'
 
 // import Header from './Header.jsx'
 // import StudentCard from './StudentCard.jsx'
-<<<<<<< HEAD
 
-import App from './App.jsx'
-
-// import DraftEditor from './DraftEditor.jsx'
-
-=======
-import App from './App.jsx'
-
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
 createRoot (document.getElementById('root')).render(
   <StrictMode>
 
   <BrowserRouter>
       <App />
-<<<<<<< HEAD
-      {/* <DraftEditor /> */}
-=======
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
+
   </BrowserRouter>
 
     {/* <HeaderBanner />
@@ -52,9 +40,6 @@ createRoot (document.getElementById('root')).render(
 
   </StrictMode>
 
-<<<<<<< HEAD
+
 )
 
-=======
-)
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04

@@ -3,41 +3,17 @@
 
 import {  Routes, Route } from 'react-router-dom'
 // import {useNavigate} from 'react-router-dom'
-<<<<<<< HEAD
-import { useState } from 'react'
-=======
 // import { useState } from 'react'
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
+// import { useState } from 'react'
 
 // import Header from './Header.jsx'
 // import StudentCard from './StudentCard.jsx'
 // import AttendanceCounter from './AttendanceCounter.jsx'
 
-<<<<<<< HEAD
-import Home from './Home.jsx';
-import Event from './Event.jsx';
-import Intrams from './Intrams.jsx';
-import Foundation from './Foundation.jsx';
-import Buwan from './Buwan.jsx';
 // function Home() {return <h1>Welcome my Precious! <br></br> <p>this is a paragraph</p></h1>; }
 // function About() {return <h1>About Page</h1>; }
 // function Contact() {return <h1>Contact Page</h1>; }
 
-
-function NameInput(){
-  const [name, setName] = useState('');
-  return(
-    <div>
-     <input 
-       value={name} 
-       onChange={(e) => setName(e.target.value)}
-       placeholder="Enter your name"
-     />
-    <p>Hello, {name}!</p>
-    </div>
-  );
-}
-=======
 // function Home() {return <h1>Home Page</h1>; }
 // function About() {return <h1>About Page</h1>; }
 import Home from './Home.jsx';
@@ -71,7 +47,6 @@ import Confirmation from './Confirmation.jsx';
 //     </div>
 //   );
 // }
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
 
 
 
@@ -80,11 +55,6 @@ import Confirmation from './Confirmation.jsx';
 // import Contact from './Contact.jsx'
 
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
 import NavBar from './NavBar.jsx'
 
 
@@ -96,14 +66,6 @@ function App(){
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-        <Route path="/events" element={<Event />} />
-        <Route path="/intrams" element={<Intrams />} /> 
-        <Route path="/foundation" element={<Foundation />} />
-        <Route path="/buwan" element={<Buwan />} />
-
-        <Route path="/input" element={<NameInput />} />
-=======
         <Route path="/event" element={<Event />} />
         <Route path="/intramsD" element={<IntramsDetail />} />
         <Route path="/intramsR" element={<IntramsRegistration />} /> 
@@ -113,7 +75,6 @@ function App(){
         <Route path="/buwanR" element={<BuwanR />} />
         <Route path="/confirmation" element={<Confirmation />} />
        
->>>>>>> 02d2d60175daf8cbe230664c8a9001712756ef04
       </Routes>
 
      

@@ -108,7 +108,7 @@ function BuwanR(){
         <option value="BSCS">BSCS</option>
     </select>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit={gooo}>Submit</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
