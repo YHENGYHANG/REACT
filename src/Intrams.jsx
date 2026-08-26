@@ -43,11 +43,4 @@ function Intrams(){
   );
 
 
-
-
-
-
-
-
-    
 }export default Intrams
