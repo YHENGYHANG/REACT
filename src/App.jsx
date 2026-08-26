@@ -21,10 +21,10 @@ import NavBar from './NavBar.jsx'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <NavBar />
 
-      <main className="flex-1 w-full max-w-3xl mx-auto px-4 py-8">
+      <main className="flex-1 w-full max-w-3xl mx-auto px-5 py-12">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Event />} />
@@ -37,6 +37,12 @@ function App() {
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </main>
+
+      <footer className="border-t border-line py-6">
+        <p className="max-w-3xl mx-auto px-5 eyebrow text-ink/50">
+          Mater Dei College &middot; Student Affairs Office
+        </p>
+      </footer>
     </div>
   )
 }

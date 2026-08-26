@@ -1,26 +1,49 @@
 import { Link } from "react-router-dom";
 
 function Event() {
-  const event = ['Intramurals', 'Foundation Day', 'Buwan ng Wika'];
+  const events = [
+    {
+      name: 'Intramurals',
+      date: 'Sept 3, 2026',
+      to: '/intrams',
+    },
+    {
+      name: 'Foundation Day',
+      date: 'Mar 3, 2027',
+      to: '/foundation',
+    },
+    {
+      name: 'Buwan ng Wika',
+      date: 'Aug 28, 2026',
+      to: '/buwan',
+    },
+  ];
+
   return (
     <div>
-      <h4 className="text-lg font-semibold text-gray-900 mb-3">Events:</h4>
-      <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
-        {event.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <p className="eyebrow mb-2">This Season</p>
+      <h1 className="font-display text-3xl font-semibold text-ink mb-8">
+        Upcoming Events
+      </h1>
 
-      <div className="flex flex-col gap-2">
-        <Link to="/intrams" className="text-purple-600 hover:underline">
-          Intramurals Details
-        </Link>
-        <Link to="/foundation" className="text-purple-600 hover:underline">
-          Foundation Day Details
-        </Link>
-        <Link to="/buwan" className="text-purple-600 hover:underline">
-          Buwan ng Wika Details
-        </Link>
+      <div className="flex flex-col gap-5">
+        {events.map((item) => (
+          <Link
+            key={item.name}
+            to={item.to}
+            className="ticket-card flex items-center justify-between px-6 py-5 hover:-translate-y-0.5 hover:shadow-lg transition-all"
+          >
+            <div>
+              <p className="font-mono text-xs text-maroon tracking-wide mb-1">
+                {item.date}
+              </p>
+              <p className="font-display text-xl font-semibold text-ink">
+                {item.name}
+              </p>
+            </div>
+            <span className="text-gold text-2xl" aria-hidden="true">&rarr;</span>
+          </Link>
+        ))}
       </div>
     </div>
   )

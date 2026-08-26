@@ -2,17 +2,33 @@ import { Link } from "react-router-dom"
 
 function BuwanD() {
   return (
-    <div>
-      <h1 className="text-3xl font-semibold text-gray-900 mb-4">Buwan ng Wika 2026</h1>
+    <div className="ticket-card px-8 py-10 sm:px-12 sm:py-12 max-w-xl mx-auto">
+      <p className="eyebrow mb-2">Event Pass</p>
+      <h1 className="font-display text-4xl font-semibold text-ink mb-8">
+        Buwan ng Wika 2026
+      </h1>
 
-      <h2 className="text-xl font-medium text-gray-800 mb-2">Details:</h2>
-      <p className="text-gray-700"><b>Date: </b>August 28, 2026</p>
-      <p className="text-gray-700"><b>Location:</b> Mater Dei College, Activity Center</p>
-      <p className="text-gray-700 mb-6">Click and join for our annual Buwan ng Wika!!</p>
+      <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 font-mono text-sm mb-2">
+        <dt className="text-ink/50">Date</dt>
+        <dd className="text-ink">August 28, 2026</dd>
+        <dt className="text-ink/50">Venue</dt>
+        <dd className="text-ink">Mater Dei College, Activity Center</dd>
+      </dl>
 
-      <h2 className="text-xl font-medium text-gray-800 mb-2">Registration:</h2>
-      <Link to="/buwanR" className="text-purple-600 hover:underline">
-        Buwan ng Wika Registration
+      <p className="text-ink/70 leading-relaxed mt-6">
+        Honor the Filipino language with spoken word, folk dance, and
+        the year's loudest tagisan ng galing.
+      </p>
+
+      <div className="ticket-divider my-8 mx-0" />
+
+      <p className="eyebrow mb-3">Registration</p>
+      <Link
+        to="/buwanR"
+        className="inline-flex items-center gap-2 bg-maroon text-paper font-medium px-5 py-3 rounded-sm hover:bg-maroon-dark transition-colors"
+      >
+        Register for Buwan ng Wika
+        <span aria-hidden="true">&rarr;</span>
       </Link>
     </div>
   )
