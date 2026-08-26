@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function SkillList(){
     const skill = ['HTML', 'PHP', 'CSS'];
     return(

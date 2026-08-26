@@ -66,12 +66,12 @@ function App(){
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/event" element={<Event />} />
-        <Route path="/intramsD" element={<IntramsDetail />} />
+        <Route path="/events" element={<Event />} />
+        <Route path="/intrams" element={<IntramsDetail />} />
         <Route path="/intramsR" element={<IntramsRegistration />} /> 
-        <Route path="/foundationD" element={<FoundationD />} />
+        <Route path="/foundation" element={<FoundationD />} />
         <Route path="/foundationR" element={<FoundationR />} />
-        <Route path="/buwanD" element={<BuwanD />} />
+        <Route path="/buwan" element={<BuwanD />} />
         <Route path="/buwanR" element={<BuwanR />} />
         <Route path="/confirmation" element={<Confirmation />} />
        
